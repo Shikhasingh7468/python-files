@@ -2,6 +2,7 @@ import random
 
 options = ("rock", "paper", "scissor")
 wining_time = 0
+total_game = 0
 
 while True:
     opponent = random.choice(options) 
@@ -24,5 +25,7 @@ while True:
             wining_time += 1
     else:
         print("This is not a valid option")
+        total_game -= 1
+    total_game += 1
 
-print(f"You win {wining_time} times.")
+print(f"You win {wining_time} times out of {total_game}.")
