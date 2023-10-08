@@ -37,7 +37,7 @@ class TodoList:
 
 
 
-def create_task(title,description):
+def create_task():
     title = input("Title:")
     description = input("Description: ")
     return Task(title, description)
@@ -59,7 +59,7 @@ def main():
         choice = input("Enter your choice (1/2/3/4/5/6/7/8): ")
 
         if choice == "1":
-            task = create_task(title,description)
+            task = create_task()
             todo_list.add_task(task)
             print("Task added.")
         elif choice == "2":
