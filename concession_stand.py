@@ -1,3 +1,16 @@
+import random
+def calulate_bill(menu,cart):
+    sum = 0
+    for food in cart:
+        sum += menu.get(food)
+    return sum
+
+def list_item(cart):
+    i = 1
+    for item in cart:
+        print(str(i) +". "+ item)
+        i+=1
+
 menu = {
     "pizza": 1000,
     "nachos": 200,
@@ -23,12 +36,10 @@ while True:
         break
     elif menu.get(food) is not None:
         cart.append(food)
+    else:
+        print(f"I apologize, but we currently don't have the {food} available. However, I can suggest {random.choice(list(menu.keys()))} as a great alternative. Would you like to try that instead?")
 print("----------- YOUR ORDER ----------")
-for food in cart:
-    total += menu.get(food)
-    print(food, end=" ")
-print()
-print(f"the total is ₹{total:.2f}")
-    
+list_item(cart)
+print(f"the total is ₹{calulate_bill(menu,cart):.2f}")
 
 
